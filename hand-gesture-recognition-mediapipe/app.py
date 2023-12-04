@@ -36,7 +36,8 @@ def get_args():
     args = parser.parse_args()
     return args
 
-# model = GPT4All("orc a-mini-3b-gguf2-q4_0.gguf")
+
+model = GPT4All("orca-mini-3b-gguf2-q4_0.gguf")
 
 def main():
     sentence = ""
@@ -110,18 +111,21 @@ def main():
             # Before exiting, use the final sentence as input to GPT-4
             break
         elif key == 13:  # Enter
+            if current_gesture=="thank_you thank_you":
+                current_gesture =  "thank_you"
+                
             sentence += current_gesture + " "  # Append the current gesture to the sentence
-        # elif key == 32: 
+        elif key == 32: 
             
-        #     if sentence.strip():
-        #         try:
-        #             with model.chat_session():
-        #                 print("You :", sentence)
-        #                 output = model.generate(prompt=sentence, temp=0)
-        #                 print("GPT-4 :", output)
-        #                 sentence = ""
-        #         except Exception as e:
-        #             print("Error during model generation:", e)
+            if sentence.strip():
+                try:
+                    with model.chat_session():
+                        print("You :", sentence)
+                        output = model.generate(prompt=sentence, temp=0)
+                        print("GPT-4 :", output)
+                        sentence = ""
+                except Exception as e:
+                    print("Error during model generation:", e)
         
 
         number, mode = select_mode(key, mode)
@@ -153,6 +157,10 @@ def main():
                     landmark_list)
                 pre_processed_point_history_list = pre_process_point_history(
                     debug_image, point_history)
+                
+                logging_csv(number, mode, pre_processed_landmark_list,
+                            pre_processed_point_history_list)
+
 
                 # Hand sign classification
                 hand_sign_id = keypoint_classifier(pre_processed_landmark_list)
