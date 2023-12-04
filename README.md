@@ -1,5 +1,8 @@
 # Sign Detection Neural Network
 
+![image](https://github.com/Sajithrajan03/Sign_Detection_NNDL/assets/93327106/bbaf503c-5e18-40ca-8131-df9b1e130554)
+
+
 ## Overview
 
 This project focuses on developing a neural network for detecting signs using computer vision techniques. The goal is to recognize and classify various signs captured through image or video input.
