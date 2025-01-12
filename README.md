@@ -30,3 +30,14 @@ This project focuses on developing a neural network for detecting signs using co
    ```bash
    https://github.com/Sajithrajan03/Sign_Detection_NNDL.git
    cd .\hand-gesture-recognition-mediapipe\
+
+
+Results:
+
+![image](https://github.com/user-attachments/assets/b11df29b-f9ba-4820-9b7e-171567ba740a)
+
+![image](https://github.com/user-attachments/assets/68641a7b-e60b-4a1f-b901-059375011219)
+
+![image](https://github.com/user-attachments/assets/fab0c292-ef61-4485-a850-96049f599660)
+
+
